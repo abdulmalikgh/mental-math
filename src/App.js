@@ -5,7 +5,10 @@ import Game from './Game';
 import Score from './Score';
 
 class App extends Component {
-
+state = {
+  numCorrect:0,
+  numQuestions:0
+}
   render() {
     return (
       <div className="App">
@@ -14,7 +17,7 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <Game />
-        <Score />
+        <Score numCorrect={this.state.numCorrect} numQuestions={this.state.numQuestions}/>
       </div>
     );
   }
