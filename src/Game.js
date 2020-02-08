@@ -16,7 +16,21 @@ class Game extends Component {
         const proposedAnswer = Math.floor(Math.random() * 3) + value1 + value2 + value3;
       return [value1,value2,value3,proposedAnswer];
     };
-   
+    updatstate = (newValueArray) => {
+        this.setState( currState => ({
+            value1:newValueArray[0],
+            value2:newValueArray[1],
+            value3:newValueArray[2],
+            proposedAnswer:newValueArray[3]
+        }))
+    }
+    handleAnswer = event => {
+        const newValueArray = this.makeNewQuestion();
+        this.updatstate(newValueArray)
+        const AnswerWasCorrect = this.evalueateAnswer(event.target.name);
+        this.props.handleAnswer(AnswerWasCorrect)
+    
+    }
   }
 render(){
      return (
