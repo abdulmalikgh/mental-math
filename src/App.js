@@ -15,6 +15,10 @@ class App extends Component {
       this.setState (currState => ({
         numCorrect: currState.numCorrect + 1
       }))
+    }else {
+      this.setState (currState => ({
+        numCorrect: currState.numCorrect
+      }))
     }
 
     this.setState( currState => ({
