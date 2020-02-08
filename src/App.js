@@ -10,7 +10,7 @@ class App extends Component {
     numQuestions:0
   }
  
-  checkCorrectAnswer = correctAnswer => {
+  handleAnswer = correctAnswer => {
     if(correctAnswer) {
       this.setState (currState => ({
         numCorrect: currState.numCorrect + 1
@@ -32,7 +32,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <Game checkCorrectAnswer={this.checkCorrectAnswer}/>
+        <Game handleAnswer={this.handleAnswer}/>
         <Score numCorrect={this.state.numCorrect} numQuestions={this.state.numQuestions}/>
       </div>
     );

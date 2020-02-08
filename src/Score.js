@@ -1,10 +1,10 @@
 import React, { Component }  from 'react';
 
-function Score(){
+function Score(props){
         return (
         <div className='scores'>
           <p className="text">
-            Your Score: {this.props.numCorrect}/{this.props.numQuestions}
+            Your Score: {props.numCorrect}/{props.numQuestions}
           </p>
         </div>
         )
